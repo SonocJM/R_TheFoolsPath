@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Unity.Collections;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class UIWindow : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class UIWindow : MonoBehaviour
         if (hideOnStart) Hide(instant: true);
     }
 
+    [Button]
     public virtual void Show(bool instant = false)
     {
         //_windowCanvas.gameObject.SetActive(true);
@@ -35,7 +37,7 @@ public class UIWindow : MonoBehaviour
             _windowCanvasGroup.transform.DOScale(endValue: Vector3.one, animationTime);
         }
     }
-
+    [Button]
     public virtual void Hide(bool instant = false)
     {
         //_windowCanvas.gameObject.SetActive(false);
