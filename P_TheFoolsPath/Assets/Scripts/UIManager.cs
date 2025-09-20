@@ -14,15 +14,15 @@ public class UIManager : Singleton<UIManager>
     /// <param name="windowUI"> Window identifier</param>
     public void ShowUI(string windowUI)
     {
-        //foreach (var window in uiWindows)
-        //{
-        //    if (window.WindowID == windowUI)
-        //    {
-        //        window.Show();
-        //        return;
-        //    }
-        //}
-        //Debug.LogWarning($"UI Window with name {windowUI} not found.");
+        foreach (var window in uiWindows)
+        {
+            if (window.WindowUI == windowUI)
+            {
+                window.Show();
+                return;
+            }
+        }
+        Debug.LogWarning($"UI Window with name {windowUI} not found.");
     }
     
     /// <summary>
@@ -31,15 +31,15 @@ public class UIManager : Singleton<UIManager>
     /// <param name="windowUI"> Window identifier</param>
     public void HideUI(string windowUI)
     {
-        //foreach (var window in uiWindows)
-        //{
-        //    if (window.WindowID == windowUI)
-        //    {
-        //        window.Hide();
-        //        return;
-        //    }
-        //}
-        //Debug.LogWarning($"UI Window with name {windowUI} not found.");
+        foreach (var window in uiWindows)
+        {
+            if (window.WindowUI == windowUI)
+            {
+                window.Hide();
+                return;
+            }
+        }
+        Debug.LogWarning($"UI Window with name {windowUI} not found.");
     }
     
     /// <summary>
@@ -58,18 +58,18 @@ public class UIManager : Singleton<UIManager>
     /// </summary>
     /// <param name="windowUI"></param>
     /// <returns></returns>
-    //public UIWindow GetUIWindow(string windowUI)
-    //{
-    //    //foreach (var window in uiWindows)
-    //    //{
-    //    //    if (window.WindowID == windowUI)
-    //    //    {
-    //    //        return window;
-    //    //    }
-    //    //}
-    //    //Debug.LogWarning($"UI Window with name {windowUI} not found.");
-    //    //return null;
-    //}
+    public UIWindow GetUIWindow(string windowUI)
+    {
+        foreach (var window in uiWindows)
+        {
+            if (window.WindowUI == windowUI)
+            {
+                return window;
+            }
+        }
+        Debug.LogWarning($"UI Window with name {windowUI} not found.");
+        return null;
+    }
 
     #region Editor
     [Button]
