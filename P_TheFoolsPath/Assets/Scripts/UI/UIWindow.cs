@@ -5,10 +5,12 @@ using NaughtyAttributes;
 
 public class UIWindow : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] private string _windowID;
     [SerializeField] private Canvas _windowCanvas;
     [SerializeField] private CanvasGroup _windowCanvasGroup;
 
+    [Header("Options")]
     [SerializeField] private bool hideOnStart = true;
     [SerializeField] private float animationTime = 0.5f;
 
@@ -51,4 +53,6 @@ public class UIWindow : MonoBehaviour
             _windowCanvasGroup.transform.DOScale(endValue: Vector3.one, animationTime);
         }
     }
+
+
 }

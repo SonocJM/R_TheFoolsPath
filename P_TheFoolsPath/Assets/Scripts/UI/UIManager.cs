@@ -87,5 +87,6 @@ public class UIManager : Singleton<UIManager>
 public static class WindowsIDs
 {
     public static string Popup = "PopupUI";
+    public static string Inventory = "InventoryUI";
 
 }
