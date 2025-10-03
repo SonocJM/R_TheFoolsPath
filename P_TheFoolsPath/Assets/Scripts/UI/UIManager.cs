@@ -8,10 +8,6 @@ public class UIManager : Singleton<UIManager>
     // List of all UI windows 
     [SerializeField] private List<UIWindow> uiWindows = new List<UIWindow>();
     
-    /// <summary>
-    ///  Shows the UI window with the specified identifier.
-    /// </summary>
-    /// <param name="windowUI"> Window identifier</param>
     public void ShowUI(string windowUI)
     {
         foreach (var window in uiWindows)
@@ -25,10 +21,6 @@ public class UIManager : Singleton<UIManager>
         Debug.LogWarning($"UI Window with name {windowUI} not found.");
     }
     
-    /// <summary>
-    ///  Hides the UI window with the specified identifier.
-    /// </summary>
-    /// <param name="windowUI"> Window identifier</param>
     public void HideUI(string windowUI)
     {
         foreach (var window in uiWindows)
@@ -42,9 +34,7 @@ public class UIManager : Singleton<UIManager>
         Debug.LogWarning($"UI Window with name {windowUI} not found.");
     }
     
-    /// <summary>
     /// Hides all UI windows.
-    /// </summary>
     public void HideAllUI()
     {
         foreach (var window in uiWindows)
@@ -53,11 +43,8 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
-    /// <summary>
     ///  Retrieves the UI window with the specified identifier.
-    /// </summary>
-    /// <param name="windowUI"></param>
-    /// <returns></returns>
+
     public UIWindow GetUIWindow(string windowUI)
     {
         foreach (var window in uiWindows)
@@ -70,17 +57,6 @@ public class UIManager : Singleton<UIManager>
         Debug.LogWarning($"UI Window with name {windowUI} not found.");
         return null;
     }
-
-    #region Editor
-    [Button]
-    private void GetAllUIWindows()
-    {
-        //uiWindows.Clear();
-        //UIWindow[] windows = FindObjectsByType<UIWindow>(FindObjectsSortMode.InstanceID);
-        //uiWindows.AddRange(windows);
-    }
-
-    #endregion
     
 }
 
