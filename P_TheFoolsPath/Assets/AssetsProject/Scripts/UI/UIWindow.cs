@@ -14,8 +14,13 @@ public class UIWindow : MonoBehaviour
     [SerializeField] private bool hideOnStart = true;
     [SerializeField] private float animationTime = 0.5f;
 
+    [Header ("Animations Entry")]
+    [SerializeField] private Ease easeShow = Ease.InBack;
+    [SerializeField] private Ease easeHide = Ease.OutBack;
+
 
     public string WindowUI => _windowID;
+    public float AnimationTime => animationTime;
 
     public void Start()
     {
