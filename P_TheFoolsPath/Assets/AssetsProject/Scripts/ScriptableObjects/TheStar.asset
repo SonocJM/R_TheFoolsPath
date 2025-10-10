@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01216ac65c5942b41840e34e47a6a6b1, type: 3}
   m_Name: TheStar
   m_EditorClassIdentifier: Assembly-CSharp::CardsData
-  sprite: {fileID: 0}
-  text: The Star
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}

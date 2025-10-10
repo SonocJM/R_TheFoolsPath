@@ -57,7 +57,15 @@ public class UIManager : Singleton<UIManager>
         Debug.LogWarning($"UI Window with name {windowUI} not found.");
         return null;
     }
-    
+
+    [Button]
+    private void GetAllUIWindows()
+    {
+        uiWindows.Clear();
+        UIWindow[] windows = FindObjectsByType<UIWindow>(FindObjectsSortMode.InstanceID);
+        uiWindows.AddRange(windows);
+    }
+
 }
 
 public static class WindowsIDs

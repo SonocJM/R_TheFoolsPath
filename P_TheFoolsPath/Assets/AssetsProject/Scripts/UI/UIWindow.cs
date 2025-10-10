@@ -18,7 +18,7 @@ public class UIWindow : MonoBehaviour
     [SerializeField] private Ease easeShow = Ease.InBack;
     [SerializeField] private Ease easeHide = Ease.OutBack;
 
-
+    public bool IsShowing { get; private set; } = false;
     public string WindowUI => _windowID;
     public float AnimationTime => animationTime;
 
@@ -34,7 +34,10 @@ public class UIWindow : MonoBehaviour
     [Button]
     public virtual void Show(bool instant = false)
     {
-        //_windowCanvas.gameObject.SetActive(true);
+        if (IsShowing) return;
+
+        _windowCanvas.gameObject.SetActive(true);
+
         if (instant)
         {
             _windowCanvasGroup.transform.DOScale(endValue: Vector3.one, duration: 0f);
@@ -57,6 +60,11 @@ public class UIWindow : MonoBehaviour
         {
             _windowCanvasGroup.transform.DOScale(endValue: Vector3.one, animationTime);
         }
+    }
+    private void DisableCanvas()
+    {
+        _windowCanvas.gameObject.SetActive(false);
+        IsShowing = false;
     }
 
 

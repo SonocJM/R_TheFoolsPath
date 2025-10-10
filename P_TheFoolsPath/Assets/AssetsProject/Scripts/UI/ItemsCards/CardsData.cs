@@ -4,5 +4,4 @@ using UnityEngine;
 public class CardsData : ScriptableObject
 {
     public Sprite sprite;
-    public string text;
 }

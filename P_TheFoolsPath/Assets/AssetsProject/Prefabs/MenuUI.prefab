@@ -151,7 +151,11 @@ MonoBehaviour:
   _windowCanvas: {fileID: 5867946702933199341}
   _windowCanvasGroup: {fileID: 8799023767334185076}
   hideOnStart: 1
-  animationTime: 0.5
+  animationTime: 2
+  easeShow: 1
+  easeHide: 1
+  canvasGroup: {fileID: 8799023767334185076}
+  fadeDuration: 0.8
 --- !u!1 &4119279369170951856
 GameObject:
   m_ObjectHideFlags: 0

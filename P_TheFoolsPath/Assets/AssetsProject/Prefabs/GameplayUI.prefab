@@ -782,7 +782,18 @@ MonoBehaviour:
   _windowCanvas: {fileID: 7740844740811394219}
   _windowCanvasGroup: {fileID: 2569712040570087857}
   hideOnStart: 1
-  animationTime: 0.5
+  animationTime: 2
+  easeShow: 26
+  easeHide: 27
+  _card1: {fileID: 6912337088773011410}
+  _card2: {fileID: 8754409375618407938}
+  _card3: {fileID: 217042040709881233}
+  _card4: {fileID: 8490375954030167375}
+  _slider: {fileID: 4362132566907524685}
+  canvasGroup: {fileID: 2569712040570087857}
+  yDistanceCards: -2000
+  xDistanceSlider: 500
+  fadeDuration: 0.8
 --- !u!1 &6068735284098549170
 GameObject:
   m_ObjectHideFlags: 0
