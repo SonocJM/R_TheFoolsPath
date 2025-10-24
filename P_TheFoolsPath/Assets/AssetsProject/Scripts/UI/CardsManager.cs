@@ -7,10 +7,10 @@ using UnityEngine;
 public class CardsManager : Singleton<CardsManager>
 {
     [SerializeField] private UIManager uiManager;
-    [SerializeField] private List<CardsData> cards;
+    [SerializeField] private List<CardsData_SO> cards;
     public UIManager UIManager => uiManager;
 
-    public List<CardsData> Cards => cards;
+    public List<CardsData_SO> Cards => cards;
 
     [Button]
     private void CreateAllItems()

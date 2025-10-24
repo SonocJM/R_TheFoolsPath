@@ -55,7 +55,7 @@ public class InventoryUI : UIWindow
     }
 
 
-    public void CreateCards(List<CardsData> items)
+    public void CreateCards(List<CardsData_SO> items)
     {
         foreach (var item in items)
         {
@@ -64,7 +64,7 @@ public class InventoryUI : UIWindow
 
     }
 
-    private void SpawnCards(CardsData itemData)
+    private void SpawnCards(CardsData_SO itemData)
     {
         GameObject go = Instantiate(cardPrefab, content.transform);
         InventoryCards item = go.GetComponent<InventoryCards>();
