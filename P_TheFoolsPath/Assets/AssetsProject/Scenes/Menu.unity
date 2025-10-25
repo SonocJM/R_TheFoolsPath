@@ -165,29 +165,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardsManager
   dontDestroyOnLoad: 1
   uiManager: {fileID: 644789722}
-  cards:
-  - {fileID: 11400000, guid: 9879e53f2e2b78e46808dd37a8f3c57e, type: 2}
-  - {fileID: 11400000, guid: f619c1ce313696542ad82ddb720cdf30, type: 2}
-  - {fileID: 11400000, guid: f323c283cf7c32e4282e740403ea9aff, type: 2}
-  - {fileID: 11400000, guid: 972116e607101ea4db169beb4ff30e91, type: 2}
-  - {fileID: 11400000, guid: 4ec4c614236650c4cb77638cd85dc450, type: 2}
-  - {fileID: 11400000, guid: ca28849e04ae7df4b955d00eed64e9a7, type: 2}
-  - {fileID: 11400000, guid: 1f70afd1be5bbee4b96137a434483409, type: 2}
-  - {fileID: 11400000, guid: 1a1bc67579203e84ba4730d9a3d07170, type: 2}
-  - {fileID: 11400000, guid: d34332998c5b85d4fa77c8df264e1048, type: 2}
-  - {fileID: 11400000, guid: 171835c1554bab545a5995c1437220f7, type: 2}
-  - {fileID: 11400000, guid: 3419f23fe2bfc5047a41e9af720ed2bf, type: 2}
-  - {fileID: 11400000, guid: 675aeacf38d84a649b65f7b8e1e74775, type: 2}
-  - {fileID: 11400000, guid: ea6f94880981d964ea73a151fa527ac7, type: 2}
-  - {fileID: 11400000, guid: afca83e8c39e58c4f8712264094c75e4, type: 2}
-  - {fileID: 11400000, guid: b60968a75c5e2164ca6ec268c308d7e7, type: 2}
-  - {fileID: 11400000, guid: ff11cb5efba1f61429dcc0ca9fbc7822, type: 2}
-  - {fileID: 11400000, guid: e686f148c5105a64d9ff250622495703, type: 2}
-  - {fileID: 11400000, guid: a60cb0f4e53b7a041b722a1c8573df1c, type: 2}
-  - {fileID: 11400000, guid: abf79a69ed614954cbea0daf4add8e50, type: 2}
-  - {fileID: 11400000, guid: 3aca84a03651a16408842b2462259b95, type: 2}
-  - {fileID: 11400000, guid: 19838626617e2f840b7c36f70a6d1f0e, type: 2}
-  - {fileID: 11400000, guid: f0c0a2b937bb551469aa097a3f174641, type: 2}
+  _cardMayorList:
+  - {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  - {fileID: 11400000, guid: e674cde26585951439a1d705a9f65a00, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _cardMinorList: []
 --- !u!1 &312736471
 GameObject:
   m_ObjectHideFlags: 0

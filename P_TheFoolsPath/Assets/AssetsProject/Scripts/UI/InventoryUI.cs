@@ -68,6 +68,6 @@ public class InventoryUI : UIWindow
     {
         GameObject go = Instantiate(cardPrefab, content.transform);
         InventoryCards item = go.GetComponent<InventoryCards>();
-        item.SetInfo(itemData.sprite);
+        item.SetInfo(itemData.Sprite);
     }
 }

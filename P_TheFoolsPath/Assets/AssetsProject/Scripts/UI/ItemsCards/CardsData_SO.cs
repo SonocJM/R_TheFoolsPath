@@ -1,12 +1,16 @@
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class CardsData_SO : ScriptableObject
 {
-    private string _id;
-    private Sprite _sprite;
+    [SerializeField]private string _id;
+    [SerializeField] private Sprite _sprite;
+    [SerializeField] private string _name;
+    [SerializeField] private string _description;
 
 
     public string ID => _id;
-    public Sprite sprite => _sprite;
+    public Sprite Sprite => _sprite;
+
+    public string Name => _name;
+
+    public string Description => _description;
 }
