@@ -497,7 +497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -570}
+  m_AnchoredPosition: {x: -28, y: -566}
   m_SizeDelta: {x: 415.8623, y: 890.8848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6239907719567092561
@@ -571,10 +571,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2473462916926734449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 399.7, y: 143.72}
-  m_SizeDelta: {x: 379.5972, y: 287.4332}
+  m_AnchorMin: {x: 0.67296946, y: 0.029120957}
+  m_AnchorMax: {x: 0.97186685, y: 0.11017487}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_SizeDelta: {x: -0.000019073486, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5466227652064559406
 CanvasRenderer:
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e786cbda61861c43a1a7f6262c31063, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ea26aa969a806c4f979a7308e45dc06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -692,7 +692,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103, y: -651}
+  m_AnchoredPosition: {x: -36.820717, y: -579}
   m_SizeDelta: {x: 415.8623, y: 890.8848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8526304382257569156
@@ -785,15 +785,18 @@ MonoBehaviour:
   animationTime: 2
   easeShow: 26
   easeHide: 27
-  _card1: {fileID: 6912337088773011410}
-  _card2: {fileID: 8754409375618407938}
-  _card3: {fileID: 217042040709881233}
-  _card4: {fileID: 8490375954030167375}
+  _card1: {fileID: 8490375954030167375}
+  _card2: {fileID: 217042040709881233}
+  _card3: {fileID: 8754409375618407938}
+  _card4: {fileID: 6912337088773011410}
   _slider: {fileID: 4362132566907524685}
   canvasGroup: {fileID: 2569712040570087857}
   yDistanceCards: -2000
-  xDistanceSlider: 500
   fadeDuration: 0.8
+  upDistance: 80
+  rightDistance: 7
+  moveDuration: 0.2
+  delayBetweenCards: 0.1
 --- !u!1 &6068735284098549170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1026,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 153, y: -511}
+  m_AnchoredPosition: {x: -4, y: -551}
   m_SizeDelta: {x: 415.8623, y: 890.8848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8567070330785915455
@@ -1218,7 +1221,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160, y: -687}
+  m_AnchoredPosition: {x: -67.791016, y: -598}
   m_SizeDelta: {x: 415.8623, y: 890.8848}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8898151531519742331
