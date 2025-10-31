@@ -7,13 +7,15 @@ public class RandomLecture : MonoBehaviour
 
     public Button botonUI;
 
+    CardsData_SO[] cardsMinor;
+
     void Start()
     {
         if (botonUI != null)
-            botonUI.onClick.AddListener(AlHacerClick);
+            botonUI.onClick.AddListener(clickLecture);
     }
 
-    void AlHacerClick()
+    void clickLecture()
     {
         float randomValue = Random.Range(0, 1);
 
@@ -21,17 +23,20 @@ public class RandomLecture : MonoBehaviour
 
         if (randomValue <= pity)
         {
-            ActivarMetodo();
+            cardJump();
         }
         else
         {
-            Debug.Log("No ocurrió el evento esta vez.");
+            Debug.Log("No salio ninunga carta");
         }
+ 
+        cardsMinor = CardsManager.Instance.SelectedMayorCard.CardMinorList;
     }
 
-    void ActivarMetodo()
+    void cardJump()
     {
-        Debug.Log("¡Evento activado!");
+        Debug.Log("salio carta");
+        //For de index de lista de los minor
     }
 }
 
