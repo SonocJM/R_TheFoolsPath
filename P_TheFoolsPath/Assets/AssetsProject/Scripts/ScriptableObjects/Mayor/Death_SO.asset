@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Death_SO
   m_EditorClassIdentifier: Assembly-CSharp::CardMayor_SO
   _id: 
-  _sprite: {fileID: 0}
-  _name: 
-  _description: 
-  _cardMinorList: []
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
+  cardName: 
+  description: 
+  relatedCards: []

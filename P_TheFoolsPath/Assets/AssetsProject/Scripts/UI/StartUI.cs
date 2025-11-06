@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,7 @@ public class StartUI : UIWindow
     {
         Hide(true);
     }
-
+    [Button]
     public override void Show(bool instant = false)
     {
         gameObject.SetActive(true);
@@ -39,7 +40,7 @@ public class StartUI : UIWindow
             _imageTitle.DOFade(1f, fadeDuration).SetEase(Ease.Linear);
         }
     }
-
+    [Button]
     public override void Hide(bool instant = false)
     {
 

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class MenuUI : UIWindow
@@ -10,6 +11,7 @@ public class MenuUI : UIWindow
     {
         Hide(true);
     }
+    [Button]
     public override void Show(bool instant = false)
     {
         gameObject.SetActive(true);
@@ -23,7 +25,7 @@ public class MenuUI : UIWindow
             canvasGroup.DOFade(1f, fadeDuration).SetEase(Ease.Linear);
         }
     }
-
+    [Button]
     public override void Hide(bool instant = false)
     {
         if (instant)

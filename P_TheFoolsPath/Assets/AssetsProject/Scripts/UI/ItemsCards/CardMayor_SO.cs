@@ -1,13 +1,17 @@
 using NUnit.Framework;
+using System.Collections;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
-using System.Collections;
+using UnityEngine.U2D;
 
 [CreateAssetMenu(fileName = "New Card", menuName = "Card/Mayor")]
 public class CardMayor_SO : CardsData_SO
 {
-    [SerializeField]private CardMinor_SO[] _cardMinorList;
+    [SerializeField] private CardsData_SO[] _relatedCards;
 
+    [SerializeField] private Sprite _buttonGuessingSprite;
 
-    public CardMinor_SO[] CardMinorList => _cardMinorList;
+    public Sprite SpriteAdivination => _buttonGuessingSprite;
+    public CardsData_SO[] RelatedMinorCards => _relatedCards;
+
 }

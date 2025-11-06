@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class SettingsUI : UIWindow
@@ -10,6 +11,7 @@ public class SettingsUI : UIWindow
     {
         Hide(true);
     }
+    [Button]
     public override void Show(bool instant = false)
     {
         gameObject.SetActive(true);
@@ -24,6 +26,7 @@ public class SettingsUI : UIWindow
         }
     }
 
+    [Button]
     public override void Hide(bool instant = false)
     {
         if (instant)

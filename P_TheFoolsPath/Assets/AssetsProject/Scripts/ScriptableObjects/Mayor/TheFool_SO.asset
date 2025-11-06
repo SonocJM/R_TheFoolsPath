@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6256ea86ec843fc468f3611bdf730d06, type: 3}
   m_Name: TheFool_SO
   m_EditorClassIdentifier: Assembly-CSharp::CardMayor_SO
-  _id: 
-  _sprite: {fileID: 0}
-  _name: 
-  _description: 
-  _cardMinorList: []
+  _id: thefool
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
+  cardName: The Fool
+  description: "El viaje comienza sin mapa ni destino. La fe es tu br\xFAjula, el
+    riesgo tu compa\xF1ero"
+  relatedCards: []

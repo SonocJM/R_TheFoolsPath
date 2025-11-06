@@ -1,5 +1,6 @@
 using DG.Tweening;
 using NaughtyAttributes;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,12 +29,21 @@ public class GameplayUI : UIWindow
     private bool isAnimating = false;
     private bool card1Turn = true;
 
+    [Header("Config Panel Guessing")]
+    [SerializeField] private GameObject guessingpanel;
+    [SerializeField] private Button[] ButtonChoice;
+    [SerializeField] private float buttonDelay = 0.05f;
+    private bool panelVisible = false;
+
     private Image[] _cards;
+
+    [Header("Cards Table UI")]
+    [SerializeField] private List<CardUI> cardsOnTableUI = new List<CardUI>();
     public override void Initialize()
     {
         Hide(true);
     }
-
+    [Button]
     public override void Show(bool instant = false)
     {
         gameObject.SetActive(true);
@@ -57,7 +67,7 @@ public class GameplayUI : UIWindow
             canvasGroup.DOFade(1f, fadeDuration).SetEase(Ease.Linear);
         }
     }
-
+    [Button]
     public override void Hide(bool instant = false)
     {
 
@@ -128,6 +138,61 @@ public class GameplayUI : UIWindow
     }
 
 
+    public void SetUpCardsOnTable(List<CardRuntime> cardsOnTable)
+    {
+        // Ensure the number of UI elements matches the number of cards on the table 
+        // Only 3 cards on table for now
+        if (cardsOnTable.Count != cardsOnTableUI.Count) return;
+        for (int i = 0; i < cardsOnTableUI.Count; i++)
+        {
+            cardsOnTableUI[i].SetupCardUI(cardsOnTable[i]);
+        }
+    }
+
+    [Button("Show Guessing")]
+    public void ShowGuessing()
+    {
+        if (panelVisible)
+        {
+            CanvasGroup cg = guessingpanel.GetComponent<CanvasGroup>();
+            if (cg == null)
+            {
+                cg = guessingpanel.AddComponent<CanvasGroup>();
+            }
+
+            cg.DOFade(0f, fadeDuration).SetEase(Ease.Linear)
+                .OnComplete(() => guessingpanel.SetActive(false));
+
+            panelVisible = false;
+        }
+        else
+        {
+            if (guessingpanel == null) return;
+
+            guessingpanel.SetActive(true);
+            CanvasGroup cg = guessingpanel.GetComponent<CanvasGroup>();
+            if (cg == null)
+            {
+                cg = guessingpanel.AddComponent<CanvasGroup>();
+            }
+
+            cg.alpha = 0f;
+            cg.DOFade(1f, fadeDuration).SetEase(Ease.OutCubic);
+
+            for (int i = 0; i < ButtonChoice.Length; i++)
+            {
+                RectTransform btnRect = ButtonChoice[i].GetComponent<RectTransform>();
+                Vector2 startPos = btnRect.anchoredPosition;
+                btnRect.anchoredPosition = new Vector2(startPos.x, startPos.y - 100f);
+
+                btnRect.DOAnchorPosY(startPos.y, 0.3f)
+                    .SetEase(Ease.OutBack)
+                    .SetDelay(i * buttonDelay);
+            }
+
+            panelVisible = true;
+        }
 
 
+    }
 }

@@ -30,7 +30,6 @@ public class RandomLecture : MonoBehaviour
             Debug.Log("No salio ninunga carta");
         }
  
-        cardsMinor = CardsManager.Instance.SelectedMayorCard.CardMinorList;
     }
 
     void cardJump()
