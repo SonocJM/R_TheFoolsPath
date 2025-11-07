@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 6489582180182236069}
   - component: {fileID: 7153625128849520865}
   - component: {fileID: 1355149804066733790}
+  - component: {fileID: 5765638151540256934}
   - component: {fileID: 8432019518603462242}
   m_Layer: 0
   m_Name: InventoryButton
@@ -189,10 +190,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1117055360864757154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.39053753, y: 0.016801145}
-  m_AnchorMax: {x: 0.60946244, y: 0.11778414}
-  m_AnchoredPosition: {x: 0, y: 18}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.43695128, y: 0.03247148}
+  m_AnchorMax: {x: 0.5630426, y: 0.1204925}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0.000022888184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7153625128849520865
 CanvasRenderer:
@@ -232,6 +233,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5765638151540256934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4119279369170951856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ad3a26da7e7914fa0167ecb6702f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveElement
+  rectTransform: {fileID: 6489582180182236069}
+  mobileAnchorMin: {x: 0.39053753, y: 0.016801145}
+  mobileAnchorMax: {x: 0.60946244, y: 0.11778414}
+  tabletAnchorMin: {x: 0.43695128, y: 0.03247148}
+  tabletAnchorMax: {x: 0.5630426, y: 0.1204925}
 --- !u!114 &8432019518603462242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +354,7 @@ GameObject:
   - component: {fileID: 1117055360864757154}
   - component: {fileID: 162970783417012750}
   - component: {fileID: 7908992511427653094}
+  - component: {fileID: 4724095460814152373}
   m_Layer: 0
   m_Name: Container
   m_TagString: Untagged
@@ -404,6 +423,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4724095460814152373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353756889673779161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ad3a26da7e7914fa0167ecb6702f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveElement
+  rectTransform: {fileID: 1117055360864757154}
+  mobileAnchorMin: {x: 0.0000002315557, y: -0.000008788292}
+  mobileAnchorMax: {x: 1.0000002, y: 0.99999124}
+  tabletAnchorMin: {x: 0.0000002315557, y: -0.000008788292}
+  tabletAnchorMax: {x: 1.0000002, y: 0.99999124}
 --- !u!1 &5592093826993642816
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +451,7 @@ GameObject:
   - component: {fileID: 3919448403793814902}
   - component: {fileID: 741338585193638359}
   - component: {fileID: 7483331237321710084}
+  - component: {fileID: 1888440044336934871}
   - component: {fileID: 7869056801692467800}
   m_Layer: 0
   m_Name: BackButton
@@ -437,10 +474,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1117055360864757154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -463.89, y: 1154.8837}
-  m_SizeDelta: {x: 144.3458, y: 144.3426}
+  m_AnchorMin: {x: 0.13272059, y: 0.8767084}
+  m_AnchorMax: {x: 0.24775088, y: 0.957008}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &741338585193638359
 CanvasRenderer:
@@ -480,6 +517,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1888440044336934871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5592093826993642816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ad3a26da7e7914fa0167ecb6702f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveElement
+  rectTransform: {fileID: 3919448403793814902}
+  mobileAnchorMin: {x: 0.045324065, y: 0.9235964}
+  mobileAnchorMax: {x: 0.16775478, y: 0.98006845}
+  tabletAnchorMin: {x: 0.13272059, y: 0.8767084}
+  tabletAnchorMax: {x: 0.24775088, y: 0.957008}
 --- !u!114 &7869056801692467800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +589,7 @@ GameObject:
   - component: {fileID: 8535445612838567106}
   - component: {fileID: 5873350920632989080}
   - component: {fileID: 2910729025557584834}
+  - component: {fileID: 288876953067974389}
   m_Layer: 0
   m_Name: BackGroundCard
   m_TagString: Untagged
@@ -556,10 +611,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1117055360864757154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -91}
-  m_SizeDelta: {x: 1072.127, y: 2323.5088}
+  m_AnchorMin: {x: 0.25602356, y: 0.13088219}
+  m_AnchorMax: {x: 0.7439724, y: 0.8690816}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_SizeDelta: {x: 0.000030517578, y: -0.000061035156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5873350920632989080
 CanvasRenderer:
@@ -599,6 +654,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &288876953067974389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6389552287761050113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ad3a26da7e7914fa0167ecb6702f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveElement
+  rectTransform: {fileID: 8535445612838567106}
+  mobileAnchorMin: {x: 0.0453236, y: 0.009876997}
+  mobileAnchorMax: {x: 0.9546764, y: 0.918918}
+  tabletAnchorMin: {x: 0.25602356, y: 0.13088219}
+  tabletAnchorMax: {x: 0.7439724, y: 0.8690816}
 --- !u!1 &7810885258305265057
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +682,7 @@ GameObject:
   - component: {fileID: 2448853214882866737}
   - component: {fileID: 9096062541394349315}
   - component: {fileID: 8910738511542056733}
+  - component: {fileID: 8289845071733400825}
   - component: {fileID: 3559778581608933624}
   m_Layer: 0
   m_Name: SettingsButton
@@ -632,10 +705,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1117055360864757154}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 462.31277, y: 1154.8837}
-  m_SizeDelta: {x: 144.3458, y: 144.3426}
+  m_AnchorMin: {x: 0.77338856, y: 0.88344395}
+  m_AnchorMax: {x: 0.88842636, y: 0.9637488}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9096062541394349315
 CanvasRenderer:
@@ -675,6 +748,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8289845071733400825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7810885258305265057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ad3a26da7e7914fa0167ecb6702f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResponsiveElement
+  rectTransform: {fileID: 2448853214882866737}
+  mobileAnchorMin: {x: 0.83090746, y: 0.9235964}
+  mobileAnchorMax: {x: 0.95333815, y: 0.98006845}
+  tabletAnchorMin: {x: 0.77338856, y: 0.88344395}
+  tabletAnchorMax: {x: 0.88842636, y: 0.9637488}
 --- !u!114 &3559778581608933624
 MonoBehaviour:
   m_ObjectHideFlags: 0

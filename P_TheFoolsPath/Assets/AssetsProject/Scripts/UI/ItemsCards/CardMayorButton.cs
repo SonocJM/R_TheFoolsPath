@@ -4,92 +4,61 @@ using TMPro;
 
 public class CardMayorButton : MonoBehaviour
 {
-    [Header("Card Mayor Data")]
-    [SerializeField] private CardMayor_SO cardMayorData;
-
     [Header("UI References")]
-    [SerializeField] private Image cardImage;
-    [SerializeField] private TMP_Text cardNameText;
-    [SerializeField] private Button button;
+    [SerializeField] private Image _iconImage;       // Sprite decorativo o 铆cono
+    [SerializeField] private TMP_Text _cardNameText; // Nombre del arcano
+    [SerializeField] private Button _button;
+
+    private CardRuntime _cardRuntime;
 
     private void Awake()
     {
-        if (button == null)
-            button = GetComponent<Button>();
+        if (_button == null)
+            _button = GetComponent<Button>();
 
-        //if (button != null)
-        //    button.onClick.AddListener(OnButtonClick);
+        if (_button != null)
+            _button.onClick.AddListener(OnButtonClicked);
     }
 
-    private void Start()
+    /// <summary>
+    /// Configura el bot贸n con los datos del Arcano Mayor.
+    /// </summary>
+    public void SetupButton(CardRuntime cardRuntime)
     {
-        SetupButton();
-    }
+        _cardRuntime = cardRuntime;
 
-    public void SetupButton()
-    {
-        if (cardMayorData == null)
+        if (_cardRuntime == null || _cardRuntime.CardData_SO == null)
         {
-            Debug.LogWarning($"{name} no tiene asignado un CardMayor_SO.");
+            Debug.LogWarning($"{name} no tiene datos asignados.");
             return;
         }
 
-        if (cardImage != null)
-            cardImage.sprite = cardMayorData.Sprite;
+        // Asignar sprite decorativo si es un Arcano Mayor
+        if (_iconImage != null && _cardRuntime.CardData_SO is CardMayor_SO mayorSO)
+        {
+            if (mayorSO.SpriteAdivination != null)
+                _iconImage.sprite = mayorSO.SpriteAdivination;
+            else
+                Debug.LogWarning($"El Arcano Mayor {_cardRuntime.CardName} no tiene ButtonSprite asignado.");
+        }
 
-        if (cardNameText != null)
-            cardNameText.text = cardMayorData.CardName;
+        // Asignar nombre
+        if (_cardNameText != null)
+            _cardNameText.text = _cardRuntime.CardName;
     }
 
-    //private void OnButtonClick()
-    //{
-    //    if (cardMayorData == null)
-    //    {
-    //        Debug.LogWarning("No hay carta mayor asignada.");
-    //        return;
-    //    }
-
-
-    //    if (activeMinors == null || activeMinors.Count == 0)
-    //    {
-    //        Debug.Log("No hay cartas menores activas.");
-    //        return;
-    //    }
-
-    //    if (CheckIfMatch(activeMinors))
-    //    {
-    //        Debug.Log($"Carta mayor desbloqueada: {cardMayorData.CardName}");
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Combinaci髇 incorrecta.");
-    //    }
-    //}
-
-    //private bool CheckIfMatch(System.Collections.Generic.List<CardRuntime> activeMinors)
-    //{
-    //    var related = cardMayorData.RelatedMinorCards;
-
-    //    int matchCount = 0;
-    //    foreach (var minor in activeMinors)
-    //    {
-    //        foreach (var relatedMinor in related)
-    //        {
-    //            if (minor.CardData_SO == relatedMinor)
-    //            {
-    //                matchCount++;
-    //                break;
-    //            }
-    //        }
-    //    }
-
-    //    return matchCount == related.Length;
-    //}
-
-    public void SetData(CardMayor_SO newInfo)
+    private void OnButtonClicked()
     {
-        cardMayorData = newInfo;
-        SetupButton();
+        if (_cardRuntime == null)
+        {
+            Debug.LogWarning("No hay carta asignada al bot贸n.");
+            return;
+        }
+
+        Debug.Log($"Has seleccionado el Arcano Mayor: {_cardRuntime.CardName}");
+
+        // Aqu铆 puedes agregar l贸gica de selecci贸n o desbloqueo
+        // Por ejemplo:
+        // CardsManager.Instance.SetCardAsUnlocked(_cardRuntime.Id);
     }
 }
-

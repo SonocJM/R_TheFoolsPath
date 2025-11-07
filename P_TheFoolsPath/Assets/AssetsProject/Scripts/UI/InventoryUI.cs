@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using NUnit.Framework.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryUI : UIWindow
 {
@@ -56,8 +57,6 @@ public class InventoryUI : UIWindow
             canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => gameObject.SetActive(false));
         }
     }
-
-
     public void SetUpCardsInInventory(List<CardRuntime> cardsInInventory)
     {
         // Clear existing UI elements

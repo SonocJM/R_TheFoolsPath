@@ -1,9 +1,6 @@
 using DG.Tweening;
-using JetBrains.Annotations;
 using NaughtyAttributes;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +11,6 @@ public class GameplayUI : UIWindow
     [SerializeField] private Image _card2;
     [SerializeField] private Image _card3;
     [SerializeField] private Image _card4;
-
-    [SerializeField] private CardMayor_SO cardMayorData;
 
     [Header("Other:")]
     [SerializeField] private Image _slider;
@@ -35,21 +30,22 @@ public class GameplayUI : UIWindow
 
     [Header("Config Panel Guessing")]
     [SerializeField] private GameObject guessingpanel;
-    [SerializeField] private GameObject ButtonMayorContainer;
-    [SerializeField] private GameObject PrefabButtonMayor;
-    [SerializeField] private Button[] ButtonChoice;
-    [SerializeField] private float buttonDelay = 0.05f;
+    [SerializeField] private GameObject mayorCardPrefab;   // Prefab de bot贸n de arcano mayor
+    [SerializeField] private Transform mayorContent;       // Contenedor donde van los botones
+
+    private List<CardMayorButton> mayorButtons = new List<CardMayorButton>();
     private bool panelVisible = false;
-    private CardMayorButton cardMayorButton;
 
     private Image[] _cards;
 
     [Header("Cards Table UI")]
     [SerializeField] private List<CardUI> cardsOnTableUI = new List<CardUI>();
+
     public override void Initialize()
     {
         Hide(true);
-        guessingpanel.SetActive(false);
+        if (guessingpanel != null)
+            guessingpanel.SetActive(false);
     }
 
     [Button]
@@ -63,7 +59,6 @@ public class GameplayUI : UIWindow
             _card2.rectTransform.DOAnchorPosY(-579, 0);
             _card3.rectTransform.DOAnchorPosY(-552, 0);
             _card4.rectTransform.DOAnchorPosY(-532, 0);
-
             canvasGroup.alpha = 1f;
         }
         else
@@ -72,32 +67,29 @@ public class GameplayUI : UIWindow
             _card2.rectTransform.DOAnchorPosY(-579, AnimationTime).SetEase(Ease.OutCubic);
             _card3.rectTransform.DOAnchorPosY(-552, AnimationTime).SetEase(Ease.OutCubic);
             _card4.rectTransform.DOAnchorPosY(-532, AnimationTime).SetEase(Ease.OutCubic);
-
             canvasGroup.DOFade(1f, fadeDuration).SetEase(Ease.Linear);
         }
     }
+
     [Button]
     public override void Hide(bool instant = false)
     {
-
         if (instant)
         {
             _card1.rectTransform.DOAnchorPosY(yDistanceCards, 0);
             _card2.rectTransform.DOAnchorPosY(yDistanceCards, 0);
             _card3.rectTransform.DOAnchorPosY(yDistanceCards, 0);
             _card4.rectTransform.DOAnchorPosY(yDistanceCards, 0);
-
             canvasGroup.alpha = 0f;
             WindowCanvas.gameObject.SetActive(false);
         }
         else
         {
-            _card1.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
-            _card2.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
-            _card3.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
-            _card4.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
-
-            canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear);
+            _card1.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic);
+            _card2.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic);
+            _card3.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic);
+            _card4.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic);
+            canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
         }
     }
 
@@ -106,7 +98,7 @@ public class GameplayUI : UIWindow
     {
         if (isAnimating)
         {
-            Debug.Log("Espera a que termine la animaci髇.");
+            Debug.Log("Espera a que termine la animaci贸n.");
             return;
         }
 
@@ -116,40 +108,30 @@ public class GameplayUI : UIWindow
         isAnimating = true;
 
         Image activeCard = card1Turn ? _card1 : _card2;
-
         RectTransform rect = activeCard.rectTransform;
         Vector2 startPos = rect.anchoredPosition;
 
         float upTargetY = startPos.y + upDistance;
         float rightTargetX = startPos.x + rightDistance;
 
-        DG.Tweening.Sequence seq = DOTween.Sequence();
-
+        Sequence seq = DOTween.Sequence();
         seq.Append(rect.DOAnchorPosY(upTargetY, moveDuration).SetEase(Ease.OutQuad))
            .Append(rect.DOAnchorPosX(rightTargetX, moveDuration).SetEase(Ease.OutQuad))
-           .AppendCallback(() =>
-           {
-               activeCard.transform.SetAsFirstSibling();
-           })
+           .AppendCallback(() => activeCard.transform.SetAsFirstSibling())
            .Append(rect.DOAnchorPosY(startPos.y, moveDuration).SetEase(Ease.InQuad))
            .Append(rect.DOAnchorPosX(startPos.x, moveDuration).SetEase(Ease.InQuad))
            .OnComplete(() =>
            {
                _card4.transform.SetAsFirstSibling();
                _card3.transform.SetAsFirstSibling();
-
                card1Turn = !card1Turn;
                isAnimating = false;
                Debug.Log("Barajado completado.");
            });
-
     }
-
 
     public void SetUpCardsOnTable(List<CardRuntime> cardsOnTable)
     {
-        // Ensure the number of UI elements matches the number of cards on the table 
-        // Only 3 cards on table for now
         if (cardsOnTable.Count != cardsOnTableUI.Count) return;
         for (int i = 0; i < cardsOnTableUI.Count; i++)
         {
@@ -160,58 +142,95 @@ public class GameplayUI : UIWindow
     [Button("Show Guessing")]
     public void ShowGuessing()
     {
+        if (guessingpanel == null)
+        {
+            Debug.LogWarning("GuessingPanel no asignado.");
+            return;
+        }
+
         if (panelVisible)
         {
             CanvasGroup cg = guessingpanel.GetComponent<CanvasGroup>();
-            if (cg == null)
-            {
-                cg = guessingpanel.AddComponent<CanvasGroup>();
-            }
-
-            cg.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => guessingpanel.SetActive(false));
-
+            if (cg == null) cg = guessingpanel.AddComponent<CanvasGroup>();
+            cg.DOFade(0f, fadeDuration).OnComplete(() => guessingpanel.SetActive(false));
             panelVisible = false;
         }
         else
         {
-            if (guessingpanel == null)
-            {
-                Debug.Log("si llegue");
-                return;
-            }
-
             guessingpanel.SetActive(true);
+
             CanvasGroup cg = guessingpanel.GetComponent<CanvasGroup>();
-            if (cg == null)
-            {
-                cg = guessingpanel.AddComponent<CanvasGroup>();
-            }
+            if (cg == null) cg = guessingpanel.AddComponent<CanvasGroup>();
 
             cg.alpha = 0f;
             cg.DOFade(1f, fadeDuration).SetEase(Ease.OutCubic);
 
-            for (int i = 0; i < ButtonChoice.Length; i++)
-            {
-                RectTransform btnRect = ButtonChoice[i].GetComponent<RectTransform>();
-                Vector2 startPos = btnRect.anchoredPosition;
-                btnRect.anchoredPosition = new Vector2(startPos.x, startPos.y - 100f);
-
-                btnRect.DOAnchorPosY(startPos.y, 0.3f)
-                    .SetEase(Ease.OutBack)
-                    .SetDelay(i * buttonDelay);
-            }
+            // Crear botones de arcanos mayores bloqueados
+            CreateMayorButtons(CardsManager.Instance.GetMayorCardsLocked());
 
             panelVisible = true;
-            cardMayorButton.SetData(cardMayorData);
+        }
+    }
 
+    public void CreateMayorButtons(List<CardRuntime> mayorCardsLocked)
+    {
+        foreach (Transform child in mayorContent)
+        {
+            Destroy(child.gameObject);
         }
 
+        foreach (var cardRuntime in mayorCardsLocked)
+        {
+            GameObject go = Instantiate(mayorCardPrefab, mayorContent);
+            CardMayorButton mayorButton = go.GetComponent<CardMayorButton>();
+
+            if (mayorButton != null)
+            {
+                mayorButton.SetupButton(cardRuntime);
+                mayorButtons.Add(mayorButton);
+
+                // Agregar evento del bot贸n
+                mayorButton.GetComponent<Button>().onClick.AddListener(() =>
+                {
+                    CardMayor_SO cardData = cardRuntime.CardData_SO as CardMayor_SO;
+                    if (cardData != null)
+                        OnMayorCardGuessed(cardData);
+                });
+            }
+        }
     }
 
-    private void CreateMayorButtons()
+    public void OnMayorCardGuessed(CardMayor_SO selectedCard)
     {
-        List<CardRuntime> MayorCards = new List<CardRuntime>();
-        MayorCards = CardsManager.Instance.GetMayorCardsLocked();
+        Debug.Log($"El jugador eligi贸 el Arcano Mayor: {selectedCard.CardName}");
+
+        bool acierto = CheckIfCorrectMayor(selectedCard);
+
+        if (acierto)
+        {
+            Debug.Log($"隆Correcto! Se desbloque贸 {selectedCard.CardName}");
+            CardRuntime cardToUnlock = CardsManager.Instance.CardsInventory.Find(c => c.CardData_SO == selectedCard);
+            if (cardToUnlock != null)
+                CardsManager.Instance.SetCardAsUnlocked(cardToUnlock.Id);
+        }
+        else
+        {
+            Debug.Log($"Fallaste. {selectedCard.CardName} no era el Arcano correcto.");
+        }
+
+        CanvasGroup cg = guessingpanel.GetComponent<CanvasGroup>();
+        if (cg != null)
+        {
+            cg.DOFade(0f, fadeDuration).OnComplete(() => guessingpanel.SetActive(false));
+        }
+
+        panelVisible = false;
     }
 
+    private bool CheckIfCorrectMayor(CardMayor_SO selectedCard)
+    {
+        // TODO: l贸gica de comprobaci贸n real m谩s adelante
+        return Random.value > 0.5f;
+    }
 }
+
