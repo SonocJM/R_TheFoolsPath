@@ -59,6 +59,7 @@ public class CardsManager : Singleton<CardsManager>
     private void FindUnlockedCardsFromSave()
     {
         string path = Application.persistentDataPath + "/cardsInventory.json";
+        Debug.Log(path);
         if (!System.IO.File.Exists(path))
         {
             Debug.LogWarning("No saved Cards Inventory found at: " + path);
@@ -186,6 +187,12 @@ public class CardsManager : Singleton<CardsManager>
         //Filter mayor cards
         cardsInventoryUI.SetUpCardsInInventory(CardsInventory);
         UIManager.Instance.ShowUI(WindowsIDs.Inventory);
+    }
+
+    public List<CardRuntime> GetMayorCardsLocked()
+    {
+        List<CardRuntime> mayorLockedCards = LockedCards.FindAll(card => card.CardData_SO as CardMayor_SO);
+        return mayorLockedCards;
     }
 
 }

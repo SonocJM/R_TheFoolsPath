@@ -30,7 +30,6 @@ public class ResponsiveManager : Singleton<ResponsiveManager>
 
     private void Start()
     {
-        Debug.Log(CurrentScreenSize);
     }
 
     private void CheckScreenSizeChange()
@@ -40,7 +39,6 @@ public class ResponsiveManager : Singleton<ResponsiveManager>
         {
             _lastScreenSize = currentScreenSize;
             OnScreenSizeChanged?.Invoke();
-            Debug.Log($"Screen size changed: {currentScreenSize.x}x{currentScreenSize.y} Orientation: {(IsPortrait() ? "Portrait" : "Landscape")}");
         }
     
     }

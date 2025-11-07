@@ -22,6 +22,8 @@ public class UIWindow : MonoBehaviour
     public string WindowUI => _windowID;
     public float AnimationTime => animationTime;
 
+    public Canvas WindowCanvas => _windowCanvas;
+
     public void Start()
     {
         Initialize();

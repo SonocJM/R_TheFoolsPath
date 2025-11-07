@@ -1,6 +1,8 @@
 using DG.Tweening;
+using JetBrains.Annotations;
 using NaughtyAttributes;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +14,8 @@ public class GameplayUI : UIWindow
     [SerializeField] private Image _card2;
     [SerializeField] private Image _card3;
     [SerializeField] private Image _card4;
+
+    [SerializeField] private CardMayor_SO cardMayorData;
 
     [Header("Other:")]
     [SerializeField] private Image _slider;
@@ -31,9 +35,12 @@ public class GameplayUI : UIWindow
 
     [Header("Config Panel Guessing")]
     [SerializeField] private GameObject guessingpanel;
+    [SerializeField] private GameObject ButtonMayorContainer;
+    [SerializeField] private GameObject PrefabButtonMayor;
     [SerializeField] private Button[] ButtonChoice;
     [SerializeField] private float buttonDelay = 0.05f;
     private bool panelVisible = false;
+    private CardMayorButton cardMayorButton;
 
     private Image[] _cards;
 
@@ -42,11 +49,13 @@ public class GameplayUI : UIWindow
     public override void Initialize()
     {
         Hide(true);
+        guessingpanel.SetActive(false);
     }
+
     [Button]
     public override void Show(bool instant = false)
     {
-        gameObject.SetActive(true);
+        WindowCanvas.gameObject.SetActive(true);
 
         if (instant)
         {
@@ -79,15 +88,14 @@ public class GameplayUI : UIWindow
             _card4.rectTransform.DOAnchorPosY(yDistanceCards, 0);
 
             canvasGroup.alpha = 0f;
-
-            gameObject.SetActive(false);
+            WindowCanvas.gameObject.SetActive(false);
         }
         else
         {
-            _card1.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => gameObject.SetActive(false));
-            _card2.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => gameObject.SetActive(false));
-            _card3.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => gameObject.SetActive(false));
-            _card4.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => gameObject.SetActive(false));
+            _card1.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
+            _card2.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
+            _card3.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
+            _card4.rectTransform.DOAnchorPosY(yDistanceCards, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
 
             canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear);
         }
@@ -160,14 +168,17 @@ public class GameplayUI : UIWindow
                 cg = guessingpanel.AddComponent<CanvasGroup>();
             }
 
-            cg.DOFade(0f, fadeDuration).SetEase(Ease.Linear)
-                .OnComplete(() => guessingpanel.SetActive(false));
+            cg.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => guessingpanel.SetActive(false));
 
             panelVisible = false;
         }
         else
         {
-            if (guessingpanel == null) return;
+            if (guessingpanel == null)
+            {
+                Debug.Log("si llegue");
+                return;
+            }
 
             guessingpanel.SetActive(true);
             CanvasGroup cg = guessingpanel.GetComponent<CanvasGroup>();
@@ -191,8 +202,16 @@ public class GameplayUI : UIWindow
             }
 
             panelVisible = true;
+            cardMayorButton.SetData(cardMayorData);
+
         }
 
-
     }
+
+    private void CreateMayorButtons()
+    {
+        List<CardRuntime> MayorCards = new List<CardRuntime>();
+        MayorCards = CardsManager.Instance.GetMayorCardsLocked();
+    }
+
 }
