@@ -39,4 +39,9 @@ public class SettingsUI : UIWindow
             canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => gameObject.SetActive(false));
         }
     }
+
+    public void ShowSettingsUI()
+    {
+        Show();
+    }
 }

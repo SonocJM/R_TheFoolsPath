@@ -48,10 +48,11 @@ MonoBehaviour:
   _windowID: Start
   _windowCanvas: {fileID: 4505820179753652650}
   _windowCanvasGroup: {fileID: 962331301072945286}
-  hideOnStart: 1
+  hideOnStart: 0
   animationTime: 2
   easeShow: 26
   easeHide: 27
+  _StartButton: {fileID: 6330327427735352170}
   _imageButton: {fileID: 190892064907494297}
   _imageTitle: {fileID: 8575849084382588011}
   _image1: {fileID: 5704416576588717758}

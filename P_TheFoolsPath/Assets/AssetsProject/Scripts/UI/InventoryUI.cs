@@ -7,6 +7,13 @@ using UnityEngine.UI;
 
 public class InventoryUI : UIWindow
 {
+    [Header("Buttons")]
+    [SerializeField] private Button _backButton;
+    [SerializeField] private Button _settingsButton;
+
+    private MenuUI _menuUI;
+    private SettingsUI _settingsUI;
+
     [Header("Inventory UI")]
     [BoxGroup("Inventory")][SerializeField] private GameObject cardPrefab;
     [BoxGroup("Inventory")][SerializeField] private GameObject content;
@@ -23,6 +30,8 @@ public class InventoryUI : UIWindow
     public override void Initialize()
     {
         Hide(true);
+        _backButton.onClick.AddListener(_menuUI.ShowMenuUI);
+        _settingsButton.onClick.AddListener(_settingsUI.ShowSettingsUI);
     }
     [Button]
     public override void Show(bool instant = false)

@@ -268,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1046,9 +1046,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   dontDestroyOnLoad: 1
   uiWindows:
-  - {fileID: 1897256781}
   - {fileID: 1058216619}
   - {fileID: 1436054633}
+  - {fileID: 1897256781}
   - {fileID: 581927051588923035}
   - {fileID: 2895944315714469613}
 --- !u!1 &682198363 stripped
@@ -1578,7 +1578,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -5
   m_TargetDisplay: 0
 --- !u!1001 &1897256779
 PrefabInstance:

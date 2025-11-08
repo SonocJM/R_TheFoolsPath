@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class StartUI : UIWindow
 {
+    [Header("Buttons")]
+    [SerializeField] private Button _StartButton;
+
+    private MenuUI _menuUI;
+
     [Header("Initial Screen UI")]
     [SerializeField] private Image _imageButton;
     [SerializeField] private Image _imageTitle;
@@ -17,7 +22,8 @@ public class StartUI : UIWindow
 
     public override void Initialize()
     {
-        Hide(true);
+        _StartButton.onClick.AddListener(HideStartUI);
+        _StartButton.onClick.AddListener(_menuUI.ShowMenuUI);
     }
     [Button]
     public override void Show(bool instant = false)
@@ -62,5 +68,14 @@ public class StartUI : UIWindow
 
             _imageTitle.DOFade(0f, fadeDuration).SetEase(Ease.Linear);
         }
+    }
+
+    public void HideStartUI()
+    {
+        Hide();
+    }
+    public void ShowStartUI()
+    {
+        Show();
     }
 }

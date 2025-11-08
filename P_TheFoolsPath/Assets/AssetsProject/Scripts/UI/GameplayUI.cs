@@ -6,6 +6,15 @@ using UnityEngine.UI;
 
 public class GameplayUI : UIWindow
 {
+    [Header ("Buttons")]
+    [SerializeField] private Button _backButton;
+    [SerializeField] private Button _settingsButton;
+    [SerializeField] private Button _guessingButton;
+    [SerializeField] private Button _shuffleButton;
+
+    private MenuUI _menuUI;
+    private SettingsUI _settingsUI;
+
     [Header("Cards:")]
     [SerializeField] private Image _card1;
     [SerializeField] private Image _card2;
@@ -46,6 +55,13 @@ public class GameplayUI : UIWindow
         Hide(true);
         if (guessingpanel != null)
             guessingpanel.SetActive(false);
+
+        _backButton.onClick.AddListener(HideGameplayUI);
+        _backButton.onClick.AddListener(_menuUI.ShowMenuUI);
+        _settingsButton.onClick.AddListener(_settingsUI.ShowSettingsUI);
+        _shuffleButton.onClick.AddListener(ShuffleCards);
+        _guessingButton.onClick.AddListener(ShowGuessing);
+
     }
 
     [Button]
@@ -228,6 +244,11 @@ public class GameplayUI : UIWindow
     private bool CheckIfCorrectMayor(CardMayor_SO selectedCard)
     {
         return Random.value > 0.5f;
+    }
+
+    public void HideGameplayUI()
+    {
+        Hide();
     }
 }
 
