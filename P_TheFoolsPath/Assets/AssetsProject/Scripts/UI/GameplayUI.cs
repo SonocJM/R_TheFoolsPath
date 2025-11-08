@@ -30,8 +30,8 @@ public class GameplayUI : UIWindow
 
     [Header("Config Panel Guessing")]
     [SerializeField] private GameObject guessingpanel;
-    [SerializeField] private GameObject mayorCardPrefab;   // Prefab de botón de arcano mayor
-    [SerializeField] private Transform mayorContent;       // Contenedor donde van los botones
+    [SerializeField] private GameObject mayorCardPrefab;   
+    [SerializeField] private Transform mayorContent;  
 
     private List<CardMayorButton> mayorButtons = new List<CardMayorButton>();
     private bool panelVisible = false;
@@ -165,7 +165,6 @@ public class GameplayUI : UIWindow
             cg.alpha = 0f;
             cg.DOFade(1f, fadeDuration).SetEase(Ease.OutCubic);
 
-            // Crear botones de arcanos mayores bloqueados
             CreateMayorButtons(CardsManager.Instance.GetMayorCardsLocked());
 
             panelVisible = true;
@@ -189,7 +188,6 @@ public class GameplayUI : UIWindow
                 mayorButton.SetupButton(cardRuntime);
                 mayorButtons.Add(mayorButton);
 
-                // Agregar evento del botón
                 mayorButton.GetComponent<Button>().onClick.AddListener(() =>
                 {
                     CardMayor_SO cardData = cardRuntime.CardData_SO as CardMayor_SO;
@@ -229,7 +227,6 @@ public class GameplayUI : UIWindow
 
     private bool CheckIfCorrectMayor(CardMayor_SO selectedCard)
     {
-        // TODO: lógica de comprobación real más adelante
         return Random.value > 0.5f;
     }
 }
