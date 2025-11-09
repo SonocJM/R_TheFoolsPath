@@ -1827,6 +1827,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6445669851831997227, guid: 144b1ff3662150e41a39152cb9c85d32, type: 3}
+      propertyPath: _windowID
+      value: StartUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445669851831997227, guid: 144b1ff3662150e41a39152cb9c85d32, type: 3}
       propertyPath: fadeDuration
       value: 0.8
       objectReference: {fileID: 0}

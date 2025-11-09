@@ -608,7 +608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6729729, y: 0.029122904}
   m_AnchorMax: {x: 0.95815617, y: 0.14616086}
-  m_AnchoredPosition: {x: 0, y: -0.00012207031}
+  m_AnchoredPosition: {x: 0, y: -0.00024414062}
   m_SizeDelta: {x: 0, y: -0.00006866455}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3307854996374485988
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca9ecc4eeebfed14ba99e4ce947badd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayUI
-  _windowID: Gameplay
+  _windowID: GameplayUI
   _windowCanvas: {fileID: 7740844740811394219}
   _windowCanvasGroup: {fileID: 2569712040570087857}
   hideOnStart: 1
@@ -1730,7 +1730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24261929, y: 0.057581905}
   m_AnchorMax: {x: 0.77045685, y: 0.5622701}
-  m_AnchoredPosition: {x: 0, y: 0.00030517578}
+  m_AnchoredPosition: {x: 0, y: 0.00036621094}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1779330297161256338

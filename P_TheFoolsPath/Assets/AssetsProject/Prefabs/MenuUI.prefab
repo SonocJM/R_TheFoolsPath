@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27be57cf52814304d9df0b05df6221cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuUI
-  _windowID: Menu
+  _windowID: MenuUI
   _windowCanvas: {fileID: 5867946702933199341}
   _windowCanvasGroup: {fileID: 8799023767334185076}
   hideOnStart: 1
