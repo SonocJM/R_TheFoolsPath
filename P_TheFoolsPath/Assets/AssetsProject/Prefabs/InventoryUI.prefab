@@ -1160,6 +1160,8 @@ MonoBehaviour:
   animationTime: 2
   easeShow: 26
   easeHide: 27
+  _backButton: {fileID: 3209121822611449175}
+  _settingsButton: {fileID: 8146053022935099773}
   cardPrefab: {fileID: 2537019224502283058, guid: b6dee10f0e2ad1f478f3a456b0810c20, type: 3}
   content: {fileID: 3640531876937981811}
   inventoryContainer: {fileID: 7800042075316058121}
@@ -1206,7 +1208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.06009781, y: 0.03845147}
   m_AnchorMax: {x: 0.94432724, y: 0.8842714}
-  m_AnchoredPosition: {x: 0, y: -0.0000014305115}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3771132708974063597

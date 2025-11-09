@@ -22,13 +22,15 @@ public class StartUI : UIWindow
 
     public override void Initialize()
     {
-        _StartButton.onClick.AddListener(HideStartUI);
-        _StartButton.onClick.AddListener(_menuUI.ShowMenuUI);
+        if (_StartButton != null)
+        {
+            _StartButton.onClick.AddListener(ShowMenuUI);   
+        }
     }
     [Button]
     public override void Show(bool instant = false)
     {
-        gameObject.SetActive(true);
+        WindowCanvas.gameObject.SetActive(true);
 
         if (instant)
         {
@@ -56,26 +58,24 @@ public class StartUI : UIWindow
             _image2.rectTransform.DOAnchorPosY(yDistanceImage2, 0);
             _imageButton.DOFade(0f, 0);
             _imageTitle.DOFade(0f, 0);
-            gameObject.SetActive(false);
+            WindowCanvas.gameObject.SetActive(false);
         }
         else
         {
-            _image1.rectTransform.DOAnchorPosY(yDistanceImage1, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => gameObject.SetActive(false));
+            _image1.rectTransform.DOAnchorPosY(yDistanceImage1, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
 
-            _image2.rectTransform.DOAnchorPosY(yDistanceImage2, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => gameObject.SetActive(false));
+            _image2.rectTransform.DOAnchorPosY(yDistanceImage2, AnimationTime).SetEase(Ease.InCubic).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
 
             _imageButton.DOFade(0f, fadeDuration).SetEase(Ease.Linear);
 
             _imageTitle.DOFade(0f, fadeDuration).SetEase(Ease.Linear);
         }
     }
-
-    public void HideStartUI()
+    
+    public void ShowMenuUI()
     {
-        Hide();
-    }
-    public void ShowStartUI()
-    {
-        Show();
+        UIManager.Instance.HideUI(WindowsIDs.Start);
+        UIManager.Instance.ShowUI(WindowsIDs.Menu);
+        Debug.Log("ya me voy, menu");
     }
 }

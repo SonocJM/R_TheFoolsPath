@@ -10,9 +10,7 @@ public class MenuUI : UIWindow
     [SerializeField] private Button _settingsButton;
     [SerializeField] private Button _playButton;
     [SerializeField] private Button _inventoryButton;
-
-    private StartUI _startUI;
-    private SettingsUI _settingsUI;
+    
 
     public CanvasGroup canvasGroup;
     public float fadeDuration = 1f;
@@ -20,12 +18,30 @@ public class MenuUI : UIWindow
     public override void Initialize()
     {
         Hide(true);
-        _backButton.onClick.AddListener(_startUI.ShowStartUI);
+        if (_backButton != null)
+        {
+            _backButton.onClick.AddListener(ShowStartUI);   
+        }
+
+        if (_settingsButton != null)
+        {
+            _settingsButton.onClick.AddListener(ShowSettingsUI);   
+        }
+
+        if (_playButton != null)
+        {
+            _playButton.onClick.AddListener(ShowGameplayUI);
+        }
+
+        if (_inventoryButton != null)
+        {
+            _inventoryButton.onClick.AddListener(ShowInventoryUI);
+        }
     }
     [Button]
     public override void Show(bool instant = false)
     {
-        gameObject.SetActive(true);
+        WindowCanvas.gameObject.SetActive(true);
 
         if (instant)
         {
@@ -42,16 +58,35 @@ public class MenuUI : UIWindow
         if (instant)
         {
             canvasGroup.alpha = 0f;
-            gameObject.SetActive(false);
+            WindowCanvas.gameObject.SetActive(false);
         }
         else
         {
-            canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => gameObject.SetActive(false));
+            canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
         }
     }
-
-    public void ShowMenuUI()
+    public void ShowGameplayUI()
     {
-        Show();
+        UIManager.Instance.HideUI(WindowsIDs.Menu);
+        UIManager.Instance.ShowUI(WindowsIDs.Gameplay);
     }
+    
+    public void ShowInventoryUI()
+    {
+        UIManager.Instance.HideUI(WindowsIDs.Menu);
+        UIManager.Instance.ShowUI(WindowsIDs.Inventory);
+    }
+    public void ShowSettingsUI()
+    {
+        UIManager.Instance.HideUI(WindowsIDs.Menu);
+        UIManager.Instance.ShowUI(WindowsIDs.Settings);
+    }
+
+    public void ShowStartUI()
+    {
+        UIManager.Instance.HideUI(WindowsIDs.Menu);
+        UIManager.Instance.ShowUI(WindowsIDs.Start);
+    }
+    
+    
 }

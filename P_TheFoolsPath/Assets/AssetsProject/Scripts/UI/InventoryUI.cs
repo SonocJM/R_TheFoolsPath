@@ -10,10 +10,7 @@ public class InventoryUI : UIWindow
     [Header("Buttons")]
     [SerializeField] private Button _backButton;
     [SerializeField] private Button _settingsButton;
-
-    private MenuUI _menuUI;
-    private SettingsUI _settingsUI;
-
+    
     [Header("Inventory UI")]
     [BoxGroup("Inventory")][SerializeField] private GameObject cardPrefab;
     [BoxGroup("Inventory")][SerializeField] private GameObject content;
@@ -30,13 +27,20 @@ public class InventoryUI : UIWindow
     public override void Initialize()
     {
         Hide(true);
-        _backButton.onClick.AddListener(_menuUI.ShowMenuUI);
-        _settingsButton.onClick.AddListener(_settingsUI.ShowSettingsUI);
+        if (_backButton != null)
+        {
+            _backButton.onClick.AddListener(ShowMenuUI);   
+        }
+
+        if (_settingsButton != null)
+        {
+            _settingsButton.onClick.AddListener(ShowSettingsUI);   
+        }
     }
     [Button]
     public override void Show(bool instant = false)
     {
-        gameObject.SetActive(true);
+        WindowCanvas.gameObject.SetActive(true);
 
         if (instant)
         {
@@ -58,12 +62,12 @@ public class InventoryUI : UIWindow
         {
             canvasGroup.alpha = 0f;
             inventoryContainer.anchoredPosition = new Vector2(inventoryContainer.anchoredPosition.x,yDistanceHide);
-            gameObject.SetActive(false);
+            WindowCanvas.gameObject.SetActive(false);
         }
         else
         {
             inventoryContainer.DOAnchorPosY(yDistanceHide, AnimationTime);
-            canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => gameObject.SetActive(false));
+            canvasGroup.DOFade(0f, fadeDuration).SetEase(Ease.Linear).OnComplete(() => WindowCanvas.gameObject.SetActive(false));
         }
     }
     public void SetUpCardsInInventory(List<CardRuntime> cardsInInventory)
@@ -85,5 +89,17 @@ public class InventoryUI : UIWindow
             cardsInInventoryUI.Add(cardUI);
         }
 
+    }
+    
+    public void ShowSettingsUI()
+    {
+        UIManager.Instance.HideUI(WindowsIDs.Inventory);
+        UIManager.Instance.ShowUI(WindowsIDs.Settings);
+    }
+
+    public void ShowMenuUI()
+    {
+        UIManager.Instance.HideUI(WindowsIDs.Inventory);
+        UIManager.Instance.ShowUI(WindowsIDs.Menu);
     }
 }

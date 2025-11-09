@@ -287,6 +287,7 @@ MonoBehaviour:
   animationTime: 0.5
   easeShow: 1
   easeHide: 1
+  _backButton: {fileID: 8849389618167515691}
   canvasGroup: {fileID: 625293094949072637}
   fadeDuration: 1
 --- !u!1 &4704334318197899661

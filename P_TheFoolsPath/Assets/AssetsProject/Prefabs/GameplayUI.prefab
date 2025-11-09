@@ -855,6 +855,10 @@ MonoBehaviour:
   animationTime: 2
   easeShow: 26
   easeHide: 27
+  _backButton: {fileID: 3676830255567622139}
+  _settingsButton: {fileID: 349933719725445878}
+  _guessingButton: {fileID: 6154323026667149085}
+  _shuffleButton: {fileID: 4241353074574283249}
   _card1: {fileID: 8490375954030167375}
   _card2: {fileID: 217042040709881233}
   _card3: {fileID: 8754409375618407938}
@@ -2462,6 +2466,17 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 2573027515451969371}
   m_SourcePrefab: {fileID: 100100000, guid: b50863ea48d788347ab7c37e0205d5fe, type: 3}
+--- !u!114 &4241353074574283249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1932232353618372987, guid: b50863ea48d788347ab7c37e0205d5fe, type: 3}
+  m_PrefabInstance: {fileID: 2309496895832225930}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9019476691148930865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &8032669402408333781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5725550069650868575, guid: b50863ea48d788347ab7c37e0205d5fe, type: 3}

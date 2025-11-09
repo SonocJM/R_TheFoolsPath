@@ -12,9 +12,6 @@ public class GameplayUI : UIWindow
     [SerializeField] private Button _guessingButton;
     [SerializeField] private Button _shuffleButton;
 
-    private MenuUI _menuUI;
-    private SettingsUI _settingsUI;
-
     [Header("Cards:")]
     [SerializeField] private Image _card1;
     [SerializeField] private Image _card2;
@@ -56,12 +53,26 @@ public class GameplayUI : UIWindow
         if (guessingpanel != null)
             guessingpanel.SetActive(false);
 
-        _backButton.onClick.AddListener(HideGameplayUI);
-        _backButton.onClick.AddListener(_menuUI.ShowMenuUI);
-        _settingsButton.onClick.AddListener(_settingsUI.ShowSettingsUI);
-        _shuffleButton.onClick.AddListener(ShuffleCards);
-        _guessingButton.onClick.AddListener(ShowGuessing);
+        if (_backButton != null)
+        {
+            _backButton.onClick.AddListener(ShowMenuUI);   
+        }
 
+        if (_settingsButton != null)
+        {
+            _settingsButton.onClick.AddListener(ShowSettingsUI);   
+        }
+
+        if (_guessingButton != null)
+        {
+            _guessingButton.onClick.AddListener(ShowGuessing);
+        }
+
+        if (_shuffleButton != null)
+        {
+            _shuffleButton.onClick.AddListener(ShuffleCards);
+        }
+        
     }
 
     [Button]
@@ -246,9 +257,16 @@ public class GameplayUI : UIWindow
         return Random.value > 0.5f;
     }
 
-    public void HideGameplayUI()
+    public void ShowSettingsUI()
     {
-        Hide();
+        UIManager.Instance.HideUI(WindowsIDs.Gameplay);
+        UIManager.Instance.ShowUI(WindowsIDs.Settings);
+    }
+
+    public void ShowMenuUI()
+    {
+        UIManager.Instance.HideUI(WindowsIDs.Gameplay);
+        UIManager.Instance.ShowUI(WindowsIDs.Menu);
     }
 }
 
