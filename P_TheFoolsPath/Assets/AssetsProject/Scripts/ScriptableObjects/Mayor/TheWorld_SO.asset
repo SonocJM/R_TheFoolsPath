@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6256ea86ec843fc468f3611bdf730d06, type: 3}
   m_Name: TheWorld_SO
   m_EditorClassIdentifier: Assembly-CSharp::CardMayor_SO
-  _id: 
+  _id: theworld
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
-  cardName: 
-  description: 
-  relatedCards: []
+  cardName: The World
+  description: "El ciclo concluye. Todo lo que fuiste, hiciste y so\xF1aste se une
+    en armon\xEDa"
+  _relatedCards: []
+  _buttonGuessingSprite: {fileID: 0}
