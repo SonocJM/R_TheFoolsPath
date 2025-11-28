@@ -10,6 +10,8 @@ public class CardUI : MonoBehaviour
 
     [ReadOnly, SerializeField] private CardRuntime _cardRuntime;
 
+    public CardRuntime CardRuntime => _cardRuntime;
+
     private void Start()
     {
         if (_cardButton != null)
