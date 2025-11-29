@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61655d8427c840b4a85aae1078e4dfd6, type: 3}
-  m_Name: PageOfCups
+  m_Name: ThreeOfWands
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
-  _id: pageofcups
+  _id: threeofwands
   sprite: {fileID: 0}
-  cardName: PageOfCups
-  description: "Tu curiosidad infantil te empuja a explorar sin miedo, aunque no
-    sepas qu\xE9 hay delante"
-  _hint: "Tu curiosidad infantil te empuja a explorar sin miedo, aunque no sepas
-    qu\xE9 hay delante"
+  cardName: ThreeOfWands
+  description: El horizonte se abre ante ti; cada paso que das forja tu camino hacia
+    lo desconocido
+  _hint: El horizonte se abre ante ti; cada paso que das forja tu camino hacia lo
+    desconocido
   _cardMayor: {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}

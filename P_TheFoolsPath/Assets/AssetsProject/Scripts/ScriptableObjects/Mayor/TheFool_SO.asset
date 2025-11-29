@@ -17,4 +17,8 @@ MonoBehaviour:
   cardName: The Fool
   description: "El viaje comienza sin mapa ni destino. La fe es tu br\xFAjula, el
     riesgo tu compa\xF1ero"
-  relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 005c19512995d9a48aadb3a399538fd7, type: 2}
+  - {fileID: 11400000, guid: 1de97608260f2cf4dba948e95369e9ac, type: 2}
+  - {fileID: 11400000, guid: 57ea872f31a18054ab72d7c91536584b, type: 2}
+  _buttonGuessingSprite: {fileID: 0}

@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The High Priestess
   description: El misterio te observa. No todo debe decirse; algunas verdades solo
     se intuyen
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: bbfc63406416ac349b66a3f77b927b29, type: 2}
+  - {fileID: 11400000, guid: 507348992b380db408f7de9abe7a95c4, type: 2}
+  - {fileID: 11400000, guid: fd9bd101698596b4fb4dbd7179477b4e, type: 2}
   _buttonGuessingSprite: {fileID: 0}

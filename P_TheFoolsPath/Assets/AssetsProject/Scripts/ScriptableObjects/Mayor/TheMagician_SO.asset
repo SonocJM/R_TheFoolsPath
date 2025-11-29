@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Magician
   description: Tienes los recursos, pero tu voluntad decide su destino. Crea, manifiesta,
     domina
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: a70fbf9f595c9dc4396cb28bd118bf14, type: 2}
+  - {fileID: 11400000, guid: b154fe986c40a7349820866cb51f0f7b, type: 2}
+  - {fileID: 11400000, guid: af7ad782d71ea3947824e3947dfaab79, type: 2}
   _buttonGuessingSprite: {fileID: 0}

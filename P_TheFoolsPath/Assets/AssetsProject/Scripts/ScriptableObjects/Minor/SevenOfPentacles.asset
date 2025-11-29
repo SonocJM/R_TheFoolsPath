@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61655d8427c840b4a85aae1078e4dfd6, type: 3}
-  m_Name: PageOfCups
+  m_Name: SevenOfPentacles
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
-  _id: pageofcups
+  _id: sevenofpentacles
   sprite: {fileID: 0}
-  cardName: PageOfCups
-  description: "Tu curiosidad infantil te empuja a explorar sin miedo, aunque no
-    sepas qu\xE9 hay delante"
-  _hint: "Tu curiosidad infantil te empuja a explorar sin miedo, aunque no sepas
-    qu\xE9 hay delante"
-  _cardMayor: {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  cardName: SevenOfPentacles
+  description: "La espera te ense\xF1a lo invisible; lo oculto florece en su tiempo"
+  _hint: "La espera te ense\xF1a lo invisible; lo oculto florece en su tiempo"
+  _cardMayor: {fileID: 11400000, guid: 9da0a04ab4840f144b15de9551b11b8f, type: 2}

@@ -134,6 +134,7 @@ public class CardsManager : Singleton<CardsManager>
             if (relatedCardRuntime != null)
             {
                 relatedCards.Add(relatedCardRuntime);
+                Debug.Log("si hay cartas");
             }
         }
 
