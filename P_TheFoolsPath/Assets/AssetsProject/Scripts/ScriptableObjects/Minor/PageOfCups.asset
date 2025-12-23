@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: PageOfCups
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
   _id: pageofcups
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: PageOfCups
   description: "Tu curiosidad infantil te empuja a explorar sin miedo, aunque no
     sepas qu\xE9 hay delante"
   _hint: "Tu curiosidad infantil te empuja a explorar sin miedo, aunque no sepas
     qu\xE9 hay delante"
-  _cardMayor: {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  _cardMayor:
+  - {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}

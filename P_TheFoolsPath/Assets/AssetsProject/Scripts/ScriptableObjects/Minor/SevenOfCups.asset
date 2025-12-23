@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: SevenOfCups
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
   _id: sevenofcups
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: SevenOfCups
   description: "Las opciones te deslumbran; la ilusi\xF3n y el deseo te tientan a
     so\xF1ar demasiado alto"
   _hint: "Las opciones te deslumbran; la ilusi\xF3n y el deseo te tientan a so\xF1ar
     demasiado alto"
-  _cardMayor: {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  _cardMayor:
+  - {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  - {fileID: 11400000, guid: 942dec1b9cbb0ff4386694ed442af9f5, type: 2}
+  - {fileID: 11400000, guid: 9281eefc802f2234baf57f1389b700d2, type: 2}

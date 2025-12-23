@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Empress
   description: "Lo f\xE9rtil florece bajo tu toque. Nutre, crea, ama, y la abundancia
     responder\xE1"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 3ae4aa7aa3a41db489607c131d7a0af4, type: 2}
+  - {fileID: 11400000, guid: b7ec133c6f442d24db3511e1c714cc89, type: 2}
+  - {fileID: 11400000, guid: be3b0b6e399158e4db3dd7d7779ecf73, type: 2}
   _buttonGuessingSprite: {fileID: 0}

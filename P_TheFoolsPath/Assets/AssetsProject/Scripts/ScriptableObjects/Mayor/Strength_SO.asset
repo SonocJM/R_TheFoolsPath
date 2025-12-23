@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: Strength
   description: 'El poder no ruge: respira. La verdadera fuerza es la calma que doma
     al instinto'
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 3676a07e49bbc6d47ae2521bb03810be, type: 2}
+  - {fileID: 11400000, guid: d8289ffc7f3c30a4094e47f07332a52e, type: 2}
+  - {fileID: 11400000, guid: ae68fa8aa00deff40a786b3e649dd1cb, type: 2}
   _buttonGuessingSprite: {fileID: 0}

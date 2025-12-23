@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Hierophant
   description: Entre la fe y la obediencia se esconde la verdad. No toda doctrina
     libera
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 13d5a896f324a1e4da2e3b0a773b8426, type: 2}
+  - {fileID: 11400000, guid: fd04ca3e938910e4594dd412e938ec1e, type: 2}
+  - {fileID: 11400000, guid: 8f6867510c0477f44ad8beb5d422f3c0, type: 2}
   _buttonGuessingSprite: {fileID: 0}

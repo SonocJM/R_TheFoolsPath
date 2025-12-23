@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The World
   description: "El ciclo concluye. Todo lo que fuiste, hiciste y so\xF1aste se une
     en armon\xEDa"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 9fbe04cb22f25074baa378d07deca9cd, type: 2}
+  - {fileID: 11400000, guid: 57ea872f31a18054ab72d7c91536584b, type: 2}
+  - {fileID: 11400000, guid: d8289ffc7f3c30a4094e47f07332a52e, type: 2}
   _buttonGuessingSprite: {fileID: 0}

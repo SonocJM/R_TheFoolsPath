@@ -26,6 +26,7 @@ public class InventoryUI : UIWindow
 
     public override void Initialize()
     {
+        CardsManager.Instance.ShowCardsInventory();
         Hide(true);
         if (_backButton != null)
         {

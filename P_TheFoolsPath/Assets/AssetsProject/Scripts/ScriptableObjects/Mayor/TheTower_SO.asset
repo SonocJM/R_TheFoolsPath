@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Tower
   description: La estructura cae para que renazca lo verdadero. Lo que se derrumba
     libera
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 7deaa978458726a4689b5def5be13ead, type: 2}
+  - {fileID: 11400000, guid: 13d5a896f324a1e4da2e3b0a773b8426, type: 2}
+  - {fileID: 11400000, guid: 5f73f89dd4f3b0b408ae577323521dd7, type: 2}
   _buttonGuessingSprite: {fileID: 0}

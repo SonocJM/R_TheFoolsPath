@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: FourOfSwords
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
   _id: fourofswords
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: FourOfSwords
   description: El silencio te revela lo que el ruido oculta.
   _hint: El silencio te revela lo que el ruido oculta
-  _cardMayor: {fileID: 11400000, guid: 9da0a04ab4840f144b15de9551b11b8f, type: 2}
+  _cardMayor:
+  - {fileID: 11400000, guid: 9da0a04ab4840f144b15de9551b11b8f, type: 2}
+  - {fileID: 11400000, guid: 018a8a39b6b07af4c80b1aa229bb0d98, type: 2}

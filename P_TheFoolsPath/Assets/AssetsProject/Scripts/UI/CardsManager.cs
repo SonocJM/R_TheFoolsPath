@@ -181,12 +181,16 @@ public class CardsManager : Singleton<CardsManager>
 
 
     [Button]
-    private void ShowCardsInventory()
+    public void ShowCardsInventory()
     {
         InventoryUI cardsInventoryUI = UIManager.Instance.GetUIWindow(WindowsIDs.Inventory) as InventoryUI;
         if (cardsInventoryUI == null) return;
         //Filter mayor cards
-        cardsInventoryUI.SetUpCardsInInventory(CardsInventory);
+        List<CardRuntime> mayorCards = CardsInventory.FindAll(
+            card => card.CardData_SO is CardMayor_SO
+        );
+        
+        cardsInventoryUI.SetUpCardsInInventory(mayorCards);
         UIManager.Instance.ShowUI(WindowsIDs.Inventory);
     }
 

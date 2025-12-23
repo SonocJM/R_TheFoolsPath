@@ -16,5 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: The Lovers
   description: "Elegir es amar, y amar es elegir. No hay uni\xF3n sin consecuencia"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: bbfc63406416ac349b66a3f77b927b29, type: 2}
+  - {fileID: 11400000, guid: 2d0f8995adbffb14bb1a4c8d5d31f143, type: 2}
+  - {fileID: 11400000, guid: 9fbe04cb22f25074baa378d07deca9cd, type: 2}
   _buttonGuessingSprite: {fileID: 0}

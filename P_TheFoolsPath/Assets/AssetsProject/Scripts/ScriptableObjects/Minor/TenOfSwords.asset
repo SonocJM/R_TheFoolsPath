@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61655d8427c840b4a85aae1078e4dfd6, type: 3}
+  m_Name: TenOfSwords
+  m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
+  _id: tenofswords
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
+  cardName: TenOfSwords
+  description: El final es doloroso, pero trae renacimiento
+  _hint: El final es doloroso, pero trae renacimiento
+  _cardMayor:
+  - {fileID: 11400000, guid: 83f202197494299429ec2f5d77ee180a, type: 2}
+  - {fileID: 11400000, guid: 6ab5f5e6b279b8143bc6c5682b22a322, type: 2}

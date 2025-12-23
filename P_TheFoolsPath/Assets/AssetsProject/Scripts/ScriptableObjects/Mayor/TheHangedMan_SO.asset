@@ -16,5 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: The Hanged Man
   description: "A veces el sacrificio es la \xFAnica forma de ver el mundo al rev\xE9s"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 78a6b17b49bf77045b897303c41ad949, type: 2}
+  - {fileID: 11400000, guid: 0c8d2a6c6ea23584ebc8b1fd59cdd33d, type: 2}
+  - {fileID: 11400000, guid: b0aa14632a51087458c3f170564a0088, type: 2}
   _buttonGuessingSprite: {fileID: 0}

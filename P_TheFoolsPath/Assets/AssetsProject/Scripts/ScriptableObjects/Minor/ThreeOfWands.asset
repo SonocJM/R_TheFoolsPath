@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: ThreeOfWands
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
   _id: threeofwands
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: ThreeOfWands
   description: El horizonte se abre ante ti; cada paso que das forja tu camino hacia
     lo desconocido
   _hint: El horizonte se abre ante ti; cada paso que das forja tu camino hacia lo
     desconocido
-  _cardMayor: {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  _cardMayor:
+  - {fileID: 11400000, guid: 86a6d8f7962bec14b9ae8f7298460210, type: 2}
+  - {fileID: 11400000, guid: 25dba3023f55a134d9f30c7497042f91, type: 2}

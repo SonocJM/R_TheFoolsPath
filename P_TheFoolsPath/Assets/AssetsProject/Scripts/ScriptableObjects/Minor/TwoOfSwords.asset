@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: TwoOfSwords
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
   _id: twoofswords
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: TwoOfSwords
   description: "La duda te divide; solo al decidir con intenci\xF3n podr\xE1s manifestar
     lo que deseas"
   _hint: "La duda te divide; solo al decidir con intenci\xF3n podr\xE1s manifestar
     lo que deseas"
-  _cardMayor: {fileID: 11400000, guid: e674cde26585951439a1d705a9f65a00, type: 2}
+  _cardMayor:
+  - {fileID: 11400000, guid: e674cde26585951439a1d705a9f65a00, type: 2}
+  - {fileID: 11400000, guid: 489241910d478234f98dc46e7d2bdb59, type: 2}
+  - {fileID: 11400000, guid: 9281eefc802f2234baf57f1389b700d2, type: 2}

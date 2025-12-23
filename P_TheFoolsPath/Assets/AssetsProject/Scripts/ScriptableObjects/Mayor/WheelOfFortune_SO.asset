@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: Wheel of Fortune
   description: "Nada permanece igual. Lo que hoy asciende, ma\xF1ana caer\xE1. Abraza
     el cambio y su ritmo"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 08fcacde235d50541a6bbb91e66f7817, type: 2}
+  - {fileID: 11400000, guid: 0e99cc3ad6c25a14e9248c2e7700a7ef, type: 2}
+  - {fileID: 11400000, guid: 96bc4c9edca03dc4295e8002aac06c15, type: 2}
   _buttonGuessingSprite: {fileID: 0}

@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Moon
   description: "No todo lo que brilla es verdad. Conf\xEDa en tu instinto cuando
     el camino se distorsiona"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 1de97608260f2cf4dba948e95369e9ac, type: 2}
+  - {fileID: 11400000, guid: a42ca387d9413944fb31b9e523f6cc0c, type: 2}
+  - {fileID: 11400000, guid: af7ad782d71ea3947824e3947dfaab79, type: 2}
   _buttonGuessingSprite: {fileID: 0}

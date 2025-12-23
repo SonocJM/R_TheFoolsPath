@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: TwoOfCups
   m_EditorClassIdentifier: Assembly-CSharp::CardMinor_SO
   _id: twoofcups
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: TwoOfCups
   description: "La conexi\xF3n m\xE1s profunda ocurre cuando escuchas sin hablar"
   _hint: "La conexi\xF3n m\xE1s profunda ocurre cuando escuchas sin hablar"
-  _cardMayor: {fileID: 11400000, guid: 9da0a04ab4840f144b15de9551b11b8f, type: 2}
+  _cardMayor:
+  - {fileID: 11400000, guid: 9da0a04ab4840f144b15de9551b11b8f, type: 2}
+  - {fileID: 11400000, guid: a0f6303da1aa5644e9b026578a49c424, type: 2}

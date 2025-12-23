@@ -16,5 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: Judgement
   description: Escucha el llamado. El pasado no te condena, te despierta
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 02f134f85f49c184fa3ecf342e8aa905, type: 2}
+  - {fileID: 11400000, guid: 8f6867510c0477f44ad8beb5d422f3c0, type: 2}
+  - {fileID: 11400000, guid: 07ac2d00bdb7e0c40ab6b7af2df386f7, type: 2}
   _buttonGuessingSprite: {fileID: 0}

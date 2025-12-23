@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Emperor
   description: "Ordena tu mundo o perecer\xE1s en el caos. La autoridad es un arma
     de doble filo"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 1f1617a5dd231864b88d6ef53dcee05f, type: 2}
+  - {fileID: 11400000, guid: 038dc234622d5ab4e88ef431a7348e1d, type: 2}
+  - {fileID: 11400000, guid: 5f73f89dd4f3b0b408ae577323521dd7, type: 2}
   _buttonGuessingSprite: {fileID: 0}

@@ -16,5 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: The Hermit
   description: "Busca dentro de ti. El faro que te gu\xEDa est\xE1 en tu propio silencio"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 3ae4aa7aa3a41db489607c131d7a0af4, type: 2}
+  - {fileID: 11400000, guid: 764d546dd211b7241b60c402d2a2b586, type: 2}
+  - {fileID: 11400000, guid: 507348992b380db408f7de9abe7a95c4, type: 2}
   _buttonGuessingSprite: {fileID: 0}

@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Devil
   description: El deseo te ata cuando olvidas que eres libre. Las cadenas son tuyas,
     no del mundo
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 1de97608260f2cf4dba948e95369e9ac, type: 2}
+  - {fileID: 11400000, guid: a42ca387d9413944fb31b9e523f6cc0c, type: 2}
+  - {fileID: 11400000, guid: 1f1617a5dd231864b88d6ef53dcee05f, type: 2}
   _buttonGuessingSprite: {fileID: 0}

@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: Temperance
   description: "Entre el fuego y el agua nace la armon\xEDa. Encuentra el punto medio
     y todo fluir\xE1"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 96bc4c9edca03dc4295e8002aac06c15, type: 2}
+  - {fileID: 11400000, guid: 8f6867510c0477f44ad8beb5d422f3c0, type: 2}
+  - {fileID: 11400000, guid: 764d546dd211b7241b60c402d2a2b586, type: 2}
   _buttonGuessingSprite: {fileID: 0}

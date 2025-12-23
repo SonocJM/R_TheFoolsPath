@@ -17,5 +17,8 @@ MonoBehaviour:
   cardName: The Chariot
   description: La victoria exige dominio de los extremos. Avanza, pero no te desgarres
     en el intento
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: c663a5c7502c4074484dacddf0a07c79, type: 2}
+  - {fileID: 11400000, guid: 53b71c57e3d55c64dad2d4c5ad5d539d, type: 2}
+  - {fileID: 11400000, guid: 807018b3035000a439fa921ea492ca08, type: 2}
   _buttonGuessingSprite: {fileID: 0}

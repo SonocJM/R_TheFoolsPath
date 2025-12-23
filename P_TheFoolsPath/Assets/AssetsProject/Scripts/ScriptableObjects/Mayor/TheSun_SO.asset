@@ -16,5 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: The Sun
   description: "La verdad ilumina todo. La alegr\xEDa y la claridad son tus gu\xEDas"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 807018b3035000a439fa921ea492ca08, type: 2}
+  - {fileID: 11400000, guid: 08fcacde235d50541a6bbb91e66f7817, type: 2}
+  - {fileID: 11400000, guid: dd249ae097059df4b8f17778e9b8a3e6, type: 2}
   _buttonGuessingSprite: {fileID: 0}

@@ -16,5 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 374456e6bcc090d45b427b5073b98daf, type: 3}
   cardName: Justice
   description: "Toda acci\xF3n deja eco. La verdad pesa lo mismo que la consecuencia"
-  _relatedCards: []
+  _relatedCards:
+  - {fileID: 11400000, guid: 913ea3b38429fbc449376164e14ca964, type: 2}
+  - {fileID: 11400000, guid: af7ad782d71ea3947824e3947dfaab79, type: 2}
+  - {fileID: 11400000, guid: e285e9f33338e05438c3e46dbbc9ac88, type: 2}
   _buttonGuessingSprite: {fileID: 0}
